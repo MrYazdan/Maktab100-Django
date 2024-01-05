@@ -80,9 +80,14 @@ from django.db.models import Q, Count, Max, Min, Avg, Sum  # noqa
 # for post in tmp:
 #     print("Post:", post.id, "Comments:", post.count_comments)
 
-tmp = Comment.objects.filter(Q(reply_to=None)).annotate(count_replies=Count("replies")).filter(count_replies__gte=2)
+# tmp = Comment.objects.filter(Q(reply_to=None)).annotate(count_replies=Count("replies")).filter(count_replies__gte=2)
 
-for comment in tmp:
-    print("Comment:", comment.id, "replies:", comment.count_replies)
+# for comment in tmp:
+#     print("Comment:", comment.id, "replies:", comment.count_replies)
+#
+# print(str(tmp.query))
 
-print(str(tmp.query))
+from users.models import CustomUser
+from django.contrib.auth import authenticate
+
+print(authenticate(username="yazdan@gmail.com", password="1234"))

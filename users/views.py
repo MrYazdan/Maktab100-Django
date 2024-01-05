@@ -11,11 +11,21 @@ class Login(LoginView):
     template_name = "login.html"
 
 
+count_of_logout = {}
+
+
 class Logout(View):
     def get(self, request):
         if self.request.user:
+            print(request.COOKIES)
+
+            latest_user_login = request.user.email
             logout(request)
-            return redirect('home')
+            count_of_logout[latest_user_login] = count_of_logout.get(latest_user_login, 0) + 1
+            response = redirect('home')
+            response.set_cookie('latest_user_login', latest_user_login)
+            response.set_cookie('count_of_logout', count_of_logout[latest_user_login])
+            return response
 
 
 class Signup(CreateView):

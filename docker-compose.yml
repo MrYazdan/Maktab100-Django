@@ -5,5 +5,10 @@ services:
     environment:
       - MODE=prod
     ports:
-      - "8000:8000" # -> Private port docker 8000 -> Public port 8000
+      - "8080:8080"
 
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+    restart: always

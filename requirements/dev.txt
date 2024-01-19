@@ -1,0 +1,6 @@
+-r ./base.txt
+
+Django
+djangorestframework
+djangorestframework-simplejwt
+drf-yasg

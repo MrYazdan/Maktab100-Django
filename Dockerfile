@@ -13,4 +13,7 @@ RUN pip install -r requirements.txt
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
+# -p 8080:8080
+# EXPOSE 8080:8080 -> deprecated !
+
 CMD ["gunicorn", "config.wsgi:application", "-b", "0.0.0.0:8080"]

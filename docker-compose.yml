@@ -1,10 +1,9 @@
 version: "3.9"
 services:
   api:
-    build:
-      context: .
-      dockerfile: Dockerfile.alpine
+    build: .
+    environment:
+      - MODE=prod
     ports:
-    # - "8000" # -> Private port docker
       - "8000:8000" # -> Private port docker 8000 -> Public port 8000
-    
+

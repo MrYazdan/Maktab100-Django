@@ -1,1 +1,2 @@
--r requirements/${MODE}.txt
+-r requirements/prod.txt
+# -r requirements/${MODE}.txt

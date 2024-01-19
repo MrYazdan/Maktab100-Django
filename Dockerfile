@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 
-CMD ["gunicorn", "config.wsgi:application", "-b", "0.0.0.0:8000"]
+CMD ["gunicorn", "config.wsgi:application", "-b", "0.0.0.0:8080"]
